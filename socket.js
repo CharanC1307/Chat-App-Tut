@@ -1,5 +1,4 @@
-PORT = 8080 || process.env.PORT
-const io = require('socket.io')(PORT)
+const io = require('socket.io')()
 const users = {}
 
 io.on('connection', socket => {
