@@ -1,4 +1,8 @@
-const io = require('socket.io')()
+const io = require('socket.io')({
+    cors: {
+        origin: ['https://admin.socket.io']
+    }
+})
 const users = {}
 
 io.on('connection', socket => {
@@ -15,5 +19,6 @@ io.on('connection', socket => {
         delete users[socket.id]
     })
 })
+
 
 module.exports = io
